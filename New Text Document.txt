@@ -2,5 +2,6 @@ adsense
 dumain name
 web hosting
 suggest message change
+cool
 database flask name store and percent
 
