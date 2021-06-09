@@ -1,0 +1,204 @@
+
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../static/style.css" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../static/favicon/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    /* ans.html */
+    .gauge {
+      width: 100%;
+      max-width: 250px;
+      font-family: "Roboto", sans-serif;
+      font-size: 32px;
+      color: #004033 !important;
+      margin: 1vh auto;
+    }
+
+    .gauge__body {
+      width: 100%;
+      height: 0;
+      padding-bottom: 50%;
+      background: #b4c0be !important;
+      position: relative;
+      border-top-left-radius: 100% 200%;
+      border-top-right-radius: 100% 200%;
+      overflow: hidden;
+    }
+
+    .gauge__fill {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: inherit;
+      height: 100%;
+      transform-origin: center top;
+      transition: transform 0.2s ease-out;
+      transform: {{rotant}};
+      /* flask variable used */
+    }
+    .gauge__fill {
+      /* flask variable used */
+      background: {{col}};
+    }
+    
+    .gauge__cover {
+      width: 75%;
+      height: 150%;
+      color: black;
+      background: #ffffff !important;
+      border-radius: 50%;
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      /* Text */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 25%;
+      box-sizing: border-box;
+    }
+    #guide{
+      color: rgb(81, 128, 236) !important;
+    }
+  </style>
+  <!-- ends -->
+
+
+  <title>Results</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <!-- logo and txt -->
+    <img src="../static/logo.png" alt="Covid19" style="width: 50px; height: 45px; position: absolute; top: 2%;" />
+    <div class="copyright"
+      style="font-size: 12px; position: absolute; top: 0; right: 0; margin: 1px; padding:2px; background: black;">
+      <a href="#">&copy;themodops</a>
+    </div>
+
+    <div id="logotxt">
+      <a href="/">
+        <h3 style="color: red; font-family: 'Lobster';">
+          Corona <span style="color: green;">Predictor</span>
+        </h3>
+      </a>
+      <h6>Stay Home Stay Safe &#10084;</h6>
+    </div>
+
+    
+    <div class="support">
+      <!-- <a href="./support.html">Buy Me A Chai.</a> -->
+      <div class='pm-button'><a href='https://www.payumoney.com/paybypayumoney/#/F3C76B336AAFA4AA3CA09F8E71085FE1'>Buy me a Tea ! ☕</a></div> 
+      </div>
+
+      <div class="social">
+        <p>Share :-</p>
+        <a href="whatsapp://send?text=Hey, I care about your health, know the chances of you getting infected by coronavirus by taking this small quiz.
+‏‏‎---------------------------------------------------------
+    *Share this message with your friends and relatives to make sure that they are safe and help India to fight against corona virus.*
+    ‏‏‎---------------------------------------------------------
+    Stay home, Stay safe.
+    ‏‏‎ ‎‏‏‎ ‎
+  ---------------------------------------------------------
+  http://www.coronapredictor.xyz/
+  ‏‏‎ ‎‏‏‎ ‎
+  ‏‏‎ ‎‏‏
+  ---------------------------------------------------------
+  मुझे आपकी सेहत की परवाह है, कोरोनोवायरस से संक्रमित होने की संभावनाओं को जानने के लिए इस क्विज़ को लें और इसे अपने दोस्तों के साथ शेयर करें।
+  घर रहें, सुरक्षित रहें।
+  ‏‏‎ ‎‏‏‎ ‎
+  ‏‏‎---------------------------------------------------------
+  *इस संदेश को अपने दोस्तों और रिश्तेदारों के साथ शेयर करें ताकि यह सुनिश्चित हो सके कि वे सुरक्षित हैं और भारत को कोरोना वायरस से लड़ने में मदद करें*
+  ‏‏‎---------------------------------------------------------
+  Proudly made in India 🇮🇳, Not in China.
+  " data-action="share/whatsapp/share"><img src="../static/WhatsApp_Logo_1.png"></a>
+      </div>
+
+  </header>
+
+
+
+  <!-- content page -->
+  {% if ((state) and (age) and (q2) and (q3) and (q4) and (q5) and(q6) and (q7) and (q8)) %}
+<!-- floater -->
+
+<div class="supportfloat" style="position: fixed; right: 15px; bottom: 15px; padding: 5px; background: green; font-size: 2.5em; border-radius: 50px;">
+  <!-- <a href="./support.html">Buy Me A Chai.</a> -->
+  <div class='pm-button'><a href='https://www.payumoney.com/paybypayumoney/#/F3C76B336AAFA4AA3CA09F8E71085FE1'>☕</a></div> 
+  </div>
+
+  <div class="contentpage">
+    <div class="gauge">
+      <div class="gauge__body">
+        <div class="gauge__fill"></div>
+        <div class="gauge__cover">{{answer}}%</div>
+      </div>
+    </div>
+
+    <div class="suggest">
+      {{suggest}}
+      <br>
+      <a href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public' id= "guide" target="blank">Read Guidelines.</a> 
+    </div>
+
+    <a href="whatsapp://send?text=Hey, I care about your health, know the chances of you getting infected by coronavirus by taking this small quiz.
+    ‏‏‎---------------------------------------------------------
+        *Share this message with your friends and relatives to make sure that they are safe and help India to fight against corona virus.*
+        ‏‏‎---------------------------------------------------------
+        Stay home, Stay safe.
+        ‏‏‎ ‎‏‏‎ ‎
+      ---------------------------------------------------------
+      http://www.coronapredictor.xyz/
+      ‏‏‎ ‎‏‏‎ ‎
+      ‏‏‎ ‎‏‏
+      ---------------------------------------------------------
+      मुझे आपकी सेहत की परवाह है, कोरोनोवायरस से संक्रमित होने की संभावनाओं को जानने के लिए इस क्विज़ को लें और इसे अपने दोस्तों के साथ शेयर करें।
+      घर रहें, सुरक्षित रहें।
+      ‏‏‎ ‎‏‏‎ ‎
+      ‏‏‎---------------------------------------------------------
+      *इस संदेश को अपने दोस्तों और रिश्तेदारों के साथ शेयर करें ताकि यह सुनिश्चित हो सके कि वे सुरक्षित हैं और भारत को कोरोना वायरस से लड़ने में मदद करें*
+      ‏‏‎---------------------------------------------------------
+      Proudly made in India 🇮🇳, Not in China.
+      "
+      data-action="share/whatsapp/share" class="button">Share &#128241; This Website!</a>
+    </div>
+    <div class="contentpage" style=" padding: 10px;">
+      <h2  style=" padding: 10px;">It seems like you have completed the quiz. Please consider clicking on the "Tea icon" or "Buy me a chai" button to support us for our future projects.
+      </h2>
+      <br>
+      <br>
+      <h3  style=" padding: 10px;">ऐसा लगता है कि आपने क्विज़ पूरा कर लिया है। कृपया "चाय आइकन" या  "Buy me a tea" पर क्लिक करें तथा हमें भविष्य की परियोजनाओं के लिए समर्थन करें।</h3>
+    </div>
+        <div class="contentpage">
+        <p style="font-size:23px; padding: 10px;">Share this website with your friends &#128108; or
+          loved ones &#128106; to make sure that they do not fall under the red &#129298; category.</p>
+        </div>
+  {% else %}
+  <div class="contentpage">
+    <h3>Please answer all the questions. Press back button on your phone and try again.</h3>
+  </div>
+
+  {% endif %}
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: white!important;
+  text-decoration: none!important;
+}
+header {
+  height: 25vh;
+  border-bottom: 2px solid black;
+}
+
+
+#logotxt {
+  position: absolute;
+  top: 0%;
+  left: 16%;
+  
+  margin: 1vw;
+  margin-bottom: 2vh;
+  width: fit-content;
+  font-size: 1.5em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode";
+}
+
+/* carousel */
+.carousel-item {
+  padding: 4vw;
+  padding-top: 3vh;
+  font-size:1.1em;
+  font-weight: 700;
+  border-radius: 15px;
+  text-align: center;
+  color: #000000 !important;
+  background: #ffffff99;
+  height: 80vh;
+}
+
+.social {
+  font-size: 2em;
+  position: absolute;
+  right: 2vw;
+  top: 11vh;
+}
+.social p {
+  margin: 0 !important;
+  font-family: "lobster";
+  font-size: 0.6em !important;
+}
+.social img{
+  margin-bottom: 15px;
+}
+.support{
+  position: relative;
+  top:80px;
+  left: 10px;
+
+  font-family: 'Indie Flower';
+  font-weight: 900;
+  padding: 10px;
+  background: black;
+  width: fit-content;
+  border-radius: 10px;
+  font-size: 1.4em;
+}
+
+.contentpage {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background: #000000da;
+  margin: 1vw;
+  padding: 2vw;
+  height: fit-content;
+  border-radius: 6px;
+}
+.togglequiz {
+  font-size:1.3em;
+  color: white;
+  padding: 5vw;
+  text-align: justify;
+  font-family: 'Merriweather', serif;
+}
+.button , button{
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Fjalla One' !important;
+  font-size: 1.3em !important;
+  padding: 2vh 6vh !important;
+  background: rgba(0, 0, 0, 0.637) !important;
+  border-radius: 2px !important;
+  border: 2px solid white !important;
+  color: white !important;
+}
+
+
+
+/* quiz2 css*/
+
+.carousel-control-next,
+    .carousel-control-prev {
+      transition: all 0.4s ease-in-out;
+    }
+    
+    .carousel-control-next:active,
+    .carousel-control-next:focus,
+    .carousel-control-next:hover {
+      transform: translateX(2vh);
+    }
+    .carousel-control-prev:active,
+    .carousel-control-prev:focus,
+    .carousel-control-prev:hover {
+      transform: translateX(-2vh);
+    }
+    .options {
+      margin: 0;
+      padding: 2.5vw;
+      width: 80%;
+      background: rgba(255, 255, 255, 0.808);
+      border-radius: 5px;
+      text-align: left;
+      border: 2px dashed black;
+
+
+      position: relative;
+      bottom: 5vh;
+      left: 10%;
+    }
+    .inps {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+      position: absolute;
+      right: 4vw;
+      top: 0;
+    }
+
+    #dropdown1 {
+      border: 2px solid black;
+      width: 70%;
+      padding: 2vw;
+      margin: 0 auto;
+      margin-top: 10vh;
+    }
+    #dropdown1 select {
+      width: 70%;
+      background: inherit;
+      border: 0;
+    }
+    /* ans.html */
+    .suggest{
+      font-size: 1.7em;
+      text-align: center;
+      padding: 2vh;
+    }
